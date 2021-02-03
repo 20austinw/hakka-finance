@@ -12,6 +12,7 @@
   padding: 0 40px;
   box-shadow: 0 0 8px 0 rgba(11, 104, 73, 0.25);
   background-color: #ffffff;
+  position: relative;
 }
 
 .menu .button {
@@ -80,8 +81,8 @@
 }
 
 .board .title {
-  width: 960px;
-  height: 120px;
+  /* width: 960px;
+  height: 120px; */
   margin: 0 0 32px;
   font-family: "Nunito Sans", sans-serif;
   font-size: 52px;
@@ -95,8 +96,8 @@
 }
 
 .board .subtitle {
-  width: 720px;
-  height: 48px;
+  /* width: 720px;
+  height: 48px; */
   margin: 32px 120px 48px;
   font-family: "Nunito Sans", sans-serif;
   font-size: 18px;
@@ -146,17 +147,15 @@
 
 .gov {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 816px;
   padding: 80px 160px;
-  justify-content: center;
+  align-items: center;
   background-color: #f0faf6;
 }
 
 .gov .title {
-  width: 476px;
-  height: 54px;
-  margin: 0 0 16px;
   font-family: "Nunito Sans", sans-serif;
   font-size: 40px;
   font-weight: 800;
@@ -166,4 +165,175 @@
   letter-spacing: normal;
   text-align: center;
   color: #04453d;
+}
+
+.gov .subtitle {
+  margin: 16px 0px 0px 0px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #363636;
+}
+
+.gov .wrapper {
+  margin: 60px 0 0 0;
+}
+
+.gov .wrapper .container {
+  width: 420px;
+  height: 280px;
+  margin: 0px 90px 0px 0px;
+  float: left;
+  position: relative;
+}
+
+.gov img {
+  float: right;
+}
+
+.gov .wrapper .container .title {
+  /* width: 296px;
+  height: 32px; */
+  margin: 25px 0px 0px 0px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #363636;
+  float: left;
+}
+
+.gov .wrapper .container .content {
+  /* width: 450px;
+  height: 66px; */
+  margin: 20px 0 60px 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #363636;
+  float: left;
+}
+
+.gov .supply {
+  text-align: center;
+}
+
+.gov .supply .title {
+  margin: 80px 0 0 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #75807c;
+}
+
+.gov .supply .number {
+  width: 479px;
+  height: 54px;
+  margin: 12px 0 20px 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #04453d;
+}
+
+.gov .supply a {
+  width: 259px;
+  height: 24px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #363636;
+}
+
+.sponsors {
+  width: 100%;
+  height: 399px;
+}
+
+.products {
+  width: 100%;
+  height: 1252px;
+}
+
+.sponsors .title {
+  margin: 120px 0 0 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #04453d;
+}
+
+.contact {
+  width: 100%;
+  height: 426px;
+  margin: 120px 0 0;
+  padding: 80px 273px 80px 270px;
+  background-color: #04453d;
+}
+
+.contact .title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+.contact .wrapper {
+  margin: 36px 0 0 0;
+}
+
+.contact .wrapper .title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  float: left;
+}
+
+.footer {
+  width: 100%;
+  height: 48px;
+  background-color: #0b6849;
 }
