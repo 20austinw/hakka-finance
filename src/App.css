@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&display=swap');
+
+* {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+
+.menu {
+  width: 100%;
+  height: 88px;
+  padding: 0 40px;
+  box-shadow: 0 0 8px 0 rgba(11, 104, 73, 0.25);
+  background-color: #ffffff;
+}
+
+.menu .button { 
+  height: 88px;
+  padding: 34px 24px;
+  float: right;
+}
+
+.menu .button a {
+  width: 38px;
+  height: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  color: #363636;
+}
+
+.announcement {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: #c3e6da;
+}
+
+.announcement .text {
+    padding: 5px 8px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #363636;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  background-blend-mode: overlay;
+  background-image: linear-gradient(110deg, #9df2c8, rgba(255, 255, 255, 0.5) 69%, rgba(157, 242, 200, 0.8) 100%), url('images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 460px;
+  padding: 80px 160px;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.board .title {
+  width: 960px;
+  height: 120px;
+  margin: 0 0 32px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: normal;
+  text-align: center;
+  color: #04453d;
+}
+
+.board .subtitle {
+  width: 720px;
+  height: 48px;
+  margin: 32px 120px 48px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #363636;
+}
+
+.divide {
+  width: 100%;
+  height: 1px;
+  background-color: #c3e6da;
+}
+
+.social {
+  width: 100%;
+  height: 120px;
+  padding: 43px 241px;
+  background-color: #ffffff;
+}
+
+.social .title {
+  width: 128px;
+  height: 32px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #75807c;
+} 
+
+.social a {
+  width: 28px;
+  height: 28px;
+  margin: 0 32px;
+  object-fit: contain;
+  float: right;
+}
+
