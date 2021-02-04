@@ -59,7 +59,7 @@
   color: #363636;
 }
 
-.board {
+.header {
   display: flex;
   flex-direction: column;
   background-blend-mode: overlay;
@@ -80,7 +80,7 @@
   object-fit: contain;
 }
 
-.board .title {
+.header .title {
   /* width: 960px;
   height: 120px; */
   margin: 0 0 32px;
@@ -95,7 +95,7 @@
   color: #04453d;
 }
 
-.board .subtitle {
+.header .subtitle {
   /* width: 720px;
   height: 48px; */
   margin: 32px 120px 48px;
