@@ -10,6 +10,9 @@ import Medium from "./images/social-medium.png";
 import Telegram from "./images/social-telegram.png";
 import Twitter from "./images/social-twitter.png";
 import Background from "./images/background.png";
+import OneInch from "./images/1inch-logo.png"
+import Chainlink from "./images/chainlink-logo.png"
+import Synthetix from "./images/synthetix-logo.png";
 
 const Menu = () => {
   return (
@@ -62,24 +65,12 @@ const Header = () => {
 };
 
 const Socials = () => {
+  const icons = [Telegram, Discord, Twitter, Medium, Github]
+  const links = ["https://t.me/hakkafinance", "https://discord.com/invite/zYfqpUQ", "https://twitter.com/hakkafinance", "https://medium.com/hakkafinance", "https://github.com/hakkafinance"]
   return (
     <div className="social">
       <span className="title">Community</span>
-      <a href="https://github.com/hakkafinance">
-        <img src={Github} alt="social-github" />
-      </a>
-      <a href="https://medium.com/hakkafinance">
-        <img src={Medium} alt="social-medium" />
-      </a>
-      <a href="https://twitter.com/hakkafinance">
-        <img src={Twitter} alt="social-twitter" />
-      </a>
-      <a href="https://discord.com/invite/zYfqpUQ">
-        <img src={Discord} alt="social-discord" />
-      </a>
-      <a href="https://t.me/hakkafinance">
-        <img src={Telegram} alt="social-telegram" />
-      </a>
+      <MyIcons icons={icons} spacing={32} links={links}/>
     </div>
   );
 };
@@ -89,7 +80,23 @@ const Divide = () => {
 };
 
 const Products = () => {
-  return <div className="products"></div>;
+  return (
+  <div className="products">
+    <p className='title'>Products bulit on Hakka Finance</p> 
+    <p className='subtitle'>Highly secure and flexible infrastructure</p>
+    <Tabs defaultActiveKey="profile" id="products-tab">
+  <Tab eventKey="home" title="Home">
+    <Sonnet />
+  </Tab>
+  <Tab eventKey="profile" title="Profile">
+    <Sonnet />
+  </Tab>
+  <Tab eventKey="contact" title="Contact" disabled>
+    <Sonnet />
+  </Tab>
+</Tabs>
+  </div>
+  );
 };
 
 const Gov = () => {
@@ -123,14 +130,18 @@ const Gov = () => {
 };
 
 const Sponsors = () => {
+  const icons = [OneInch, Synthetix, Chainlink]
   return (
     <div className="sponsors">
       <p className="title">Partners &amp; Collaborators</p>
+      <MyIcons icons={icons} spacing={48}/>
     </div>
   );
 };
 
 const Footer = () => {
+  const icons = [Telegram, Discord, Twitter, Medium, Github]
+  const links = ["https://t.me/hakkafinance", "https://discord.com/invite/zYfqpUQ", "https://twitter.com/hakkafinance", "https://medium.com/hakkafinance", "https://github.com/hakkafinance"]
   return (
     <>
       <div className="contact">
@@ -141,12 +152,29 @@ const Footer = () => {
             <Form.Control type="email" placeholder="Enter email" size="lg" />
           </Form>
         </div>
+        <MyIcons icons = {icons} spacing={32} links={links}/>
       </div>
-      <div className="footer"></div>
+      <footer className="copyright"><p>© Copyright 2021 HAKKA FINANCE</p></footer>
     </>
   );
 };
 
+const MyIcons = props => {
+  const icons = props.icons
+  const spacing = props.spacing
+  const links = props.links
+  return links !== undefined ? (
+    <span>{icons.map((icon, i) => 
+      <a key={i} href={links[i]}>
+        <img src={icon} style={{margin: `0 ${spacing}px 0 0`}}alt={`icon${i}`}/>
+      </a>)}</span>
+  ): (
+  <span>{icons.map((icon, i) => 
+      <img key={i} src={icon} style={{margin: `0 ${spacing}px 0 0`}}alt={`icon${i}`}/>
+)}</span>
+    );
+}
+ 
 const App = () => {
   return (
     <>
