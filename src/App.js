@@ -18,6 +18,10 @@ import BlackHole from "./images/blackholeswap.png";
 import WhitePaper from "./images/icon-whitepaper.png";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import SwipeableViews from "react-swipeable-views";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
 const Menu = () => {
   return (
@@ -216,6 +220,32 @@ const Card = (props) => {
   );
 };
 
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
 const CurrentProducts = () => {
   return (
     <CardDeck>
@@ -254,60 +284,83 @@ const CurrentProducts = () => {
 };
 
 const Products = () => {
+  const classes = useStyles();
+  const theme = useTheme();
   const [value, setValue] = useState(0);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const handleChangeIndex = (index) => {
+    setValue(index);
   };
 
   return (
     <div className="products">
       <p className="title">Products bulit on Hakka Finance</p>
       <p className="subtitle">Highly secure and flexible infrastructure</p>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        TabIndicatorProps={{ style: { background: "#169150" } }}
-        textColor="black"
-        centered
-      >
-        <Tab
-          label={
-            <span
-              style={{
-                fontFamily: "Nunito Sans, sans-serif",
-                fontSize: "16px",
-              }}
-            >
-              ALL
-            </span>
-          }
-        />
-        <Tab
-          label={
-            <span
-              style={{
-                fontFamily: "Nunito Sans, sans-serif",
-                fontSize: "16px",
-              }}
-            >
-              LIVE
-            </span>
-          }
-        />
-        <Tab
-          label={
-            <span
-              style={{
-                fontFamily: "Nunito Sans, sans-serif",
-                fontSize: "16px",
-              }}
-            >
-              COMING SOON
-            </span>
-          }
-        />
-      </Tabs>
-      <CurrentProducts />
+      <div className={classes.root}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          TabIndicatorProps={{ style: { background: "#169150" } }}
+          textColor="black"
+          centered
+        >
+          <Tab
+            label={
+              <span
+                style={{
+                  fontFamily: "Nunito Sans, sans-serif",
+                  fontSize: "16px",
+                }}
+              >
+                ALL
+              </span>
+            }
+          />
+          <Tab
+            label={
+              <span
+                style={{
+                  fontFamily: "Nunito Sans, sans-serif",
+                  fontSize: "16px",
+                }}
+              >
+                LIVE
+              </span>
+            }
+          />
+          <Tab
+            label={
+              <span
+                style={{
+                  fontFamily: "Nunito Sans, sans-serif",
+                  fontSize: "16px",
+                }}
+              >
+                COMING SOON
+              </span>
+            }
+          />
+        </Tabs>
+        <SwipeableViews
+          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+          index={value}
+          onChangeIndex={handleChangeIndex}
+        >
+          <TabPanel value={value} index={0} dir={theme.direction}>
+            <CurrentProducts />
+          </TabPanel>
+          <TabPanel value={value} index={1} dir={theme.direction}>
+            Such empty!
+          </TabPanel>
+          <TabPanel value={value} index={2} dir={theme.direction}>
+            Such Empty!
+          </TabPanel>
+        </SwipeableViews>
+      </div>
     </div>
   );
 };
