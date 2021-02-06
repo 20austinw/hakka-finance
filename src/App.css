@@ -355,21 +355,21 @@
 }
 
 .products .title {
-    margin: 80px 0 0 0;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #04453d;
+  margin: 80px 0 0 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #04453d;
 }
 
 .products .subtitle {
-  margin: 16px 0 0 0;
-  font-family: 'Nunito Sans', sans-serif;
+  margin: 16px 0 48px 0;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 18px;
   font-weight: 600;
   font-stretch: normal;
@@ -389,7 +389,7 @@ div.card {
   box-shadow: 0 12px 24px -8px rgba(11, 104, 73, 0.1);
   border: solid 1px #c3e6da;
   background-color: #ffffff;
-  transition: '2s'
+  transition: "2s";
 }
 
 .card:hover {
