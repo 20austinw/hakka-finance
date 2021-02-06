@@ -1,4 +1,5 @@
 import "./App.css";
+import React, {useState} from 'react';
 import Logo from "./images/hf_logo.png";
 import Broadcast from "./images/broadcast.png";
 import Button from "react-bootstrap/Button";
@@ -13,6 +14,8 @@ import Background from "./images/background.png";
 import OneInch from "./images/1inch-logo.png"
 import Chainlink from "./images/chainlink-logo.png"
 import Synthetix from "./images/synthetix-logo.png";
+import BlackHole from './images/blackholeswap.png'
+import WhitePaper from './images/icon-whitepaper.png'
 
 const Menu = () => {
   return (
@@ -79,22 +82,119 @@ const Divide = () => {
   return <div className="divide" />;
 };
 
+const CardDeck = ({children}) => {
+  return (
+    <div style={{
+       width: '990px',
+       height: '840px',
+       margin: '33px 0 0 0',
+       outline: '2px solid black',
+       display: 'flex',
+       flexDirection: 'row',
+       flexWrap: 'wrap',
+      justifyContent: 'center'
+    }}>
+      {children}
+    </div>
+  )
+}
+
+const Card = () => {
+  const [color, setColor] = useState('#169150')
+  return (
+    <div className='card' style={{
+      clear: 'both',
+      width: '300px',
+      height: '390px',
+      margin: '15px 15px',
+      padding: '28px 24px 24px',
+      borderRadius: '16px',
+      boxShadow: '0 12px 24px -8px rgba(11, 104, 73, 0.1)',
+      border: 'solid 1px #c3e6da',
+      backgroundColor: '#ffffff',
+      transition: 'height 2s'
+   }}> 
+    <img src={BlackHole} alt='BlackHole'style={{
+      margin: '0 0 20px 0',
+      objectFit: 'contain',
+    }}/>
+      <p style={{
+        margin: '0px 0px 8px 0',
+        fontFamily: 'Nunito Sans, sans-serif',
+        fontSize: '24px',
+        fontWeight: 'bold',
+        fontStretch: 'normal',
+        fontStyle: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: 'normal',
+        color: '#363636'
+      }}>BlackHoleSwap</p>
+      <div className='wrapper' style={{display: 'flex', alignItems: 'center'}}>
+        <img src={WhitePaper} style={{
+          width: '24px',
+          height: '24px',
+          margin: '0 8px 0 0',
+          objectFit: 'contain'
+        }} alt='icon'/>
+        <span style={{
+          fontFamily: 'Nunito Sans, sans-serif',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          fontStretch: 'normal',
+          fontStyle: 'normal',
+          letterSpacing: 'normal',
+          lineHeight: 'normal',
+          color: 'rgba(117, 128, 124, 0.7)',
+        }}>View Whitepaper</span>
+    </div>
+    <p style={{
+      width: '252px',
+      height: '66px',
+      margin: '36px 0',
+      fontFamily: 'Nunito Sans, sans-serif',
+      fontSize: '16px',
+      fontWeight: '600',
+      fontStretch: 'normal',
+      fontStyle: 'normal',
+      lineHeight: 'normal',
+      letterSpacing: 'normal',
+      color: '#363636'
+      }}>
+      HA decentralized AMM (Automatic Market Making) exchange designed for stablecoins
+    </p>
+    <a href='http://google.com'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" style={{float:'right'}} onMouseOver={()=>setColor('#29d646')} onMouseOut={()=>setColor('#169150')}>
+      <g fill="none" fillRule="evenodd">
+        <circle cx="22" cy="22" r="21.5" fill="#FFF" stroke={color}/>
+        <g transform="translate(12 12)">
+          <rect width="20" height="20"/>
+          <path fill={color} fillRule="nonzero" d="M5.14208351,4.00356895 C4.81233652,3.97374489 4.49403058,4.1326062 4.31992726,4.41389374 C4.14582394,4.69518128 4.14582394,5.05058643 4.31992726,5.33187397 C4.49403058,5.61316151 4.81233652,5.77202282 5.14208351,5.74219876 L14.0284414,5.74741465 L4.2247259,15.5393777 C3.91315582,15.885446 3.92719815,16.4145253 4.25668778,16.7436199 C4.58617742,17.0727146 5.1158917,17.0867401 5.46237535,16.7755435 L15.2660908,6.98358044 L15.259128,15.8610242 C15.2701122,16.3365151 15.6534247,16.719368 16.1294862,16.7303391 C16.3604305,16.730701 16.5820201,16.639229 16.7453225,16.4761223 C16.908625,16.3130156 17.0002068,16.0916916 16.9998445,15.8610242 L16.9998445,4.87288386 C17.0042721,4.64099978 16.9139964,4.41730738 16.7498029,4.25331076 C16.5856095,4.08931414 16.3616486,3.99914667 16.1294862,4.00356895 L5.14208351,4.00356895 Z"/>
+        </g>
+      </g>
+    </svg>
+    </a>
+   </div>
+  )
+}
+
+const CurrentProducts = () => {
+  return (
+    <CardDeck>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </CardDeck>
+  )
+}
+
 const Products = () => {
   return (
   <div className="products">
     <p className='title'>Products bulit on Hakka Finance</p> 
     <p className='subtitle'>Highly secure and flexible infrastructure</p>
-    <Tabs defaultActiveKey="profile" id="products-tab">
-  <Tab eventKey="home" title="Home">
-    <Sonnet />
-  </Tab>
-  <Tab eventKey="profile" title="Profile">
-    <Sonnet />
-  </Tab>
-  <Tab eventKey="contact" title="Contact" disabled>
-    <Sonnet />
-  </Tab>
-</Tabs>
+    <CurrentProducts />
   </div>
   );
 };
