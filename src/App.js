@@ -99,24 +99,18 @@ const CardDeck = ({children}) => {
   )
 }
 
-const Card = () => {
+const Card = props => {
   const [color, setColor] = useState('#169150')
   return (
-    <div className='card' style={{
-      clear: 'both',
-      width: '300px',
-      height: '390px',
-      margin: '15px 15px',
-      padding: '28px 24px 24px',
-      borderRadius: '16px',
-      boxShadow: '0 12px 24px -8px rgba(11, 104, 73, 0.1)',
-      border: 'solid 1px #c3e6da',
-      backgroundColor: '#ffffff',
-      transition: 'height 2s'
-   }}> 
+  <div className='cardContainer' style={{width: '330px', height: '420px'}}>
+  {/*Card has to be controlled from App.css */}
+  <div className='card'> 
     <img src={BlackHole} alt='BlackHole'style={{
+      width: '72px',
+      height: '72px',
       margin: '0 0 20px 0',
       objectFit: 'contain',
+      float: 'left'
     }}/>
       <p style={{
         margin: '0px 0px 8px 0',
@@ -128,8 +122,8 @@ const Card = () => {
         lineHeight: 'normal',
         letterSpacing: 'normal',
         color: '#363636'
-      }}>BlackHoleSwap</p>
-      <div className='wrapper' style={{display: 'flex', alignItems: 'center'}}>
+      }}>{props.title}</p>
+      <a href={props.whitepaperLink}><div className='wrapper' style={{display: 'flex', alignItems: 'center'}}>
         <img src={WhitePaper} style={{
           width: '24px',
           height: '24px',
@@ -146,7 +140,7 @@ const Card = () => {
           lineHeight: 'normal',
           color: 'rgba(117, 128, 124, 0.7)',
         }}>View Whitepaper</span>
-    </div>
+    </div></a>
     <p style={{
       width: '252px',
       height: '66px',
@@ -160,9 +154,9 @@ const Card = () => {
       letterSpacing: 'normal',
       color: '#363636'
       }}>
-      HA decentralized AMM (Automatic Market Making) exchange designed for stablecoins
+      {props.desc}
     </p>
-    <a href='http://google.com'>
+    <a href={props.productLink}>
     <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" style={{float:'right'}} onMouseOver={()=>setColor('#29d646')} onMouseOut={()=>setColor('#169150')}>
       <g fill="none" fillRule="evenodd">
         <circle cx="22" cy="22" r="21.5" fill="#FFF" stroke={color}/>
@@ -174,17 +168,18 @@ const Card = () => {
     </svg>
     </a>
    </div>
+   </div>
   )
 }
 
 const CurrentProducts = () => {
   return (
     <CardDeck>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card title='BlackholeSwap' whitepaperLink='http://google.com/' desc='HA decentralized AMM (Automatic Market Making) exchange designed for stablecoins' productLink='http://google.com/' />
+      <Card title='BlackholeSwap' whitepaperLink='http://google.com/' desc='HA decentralized AMM (Automatic Market Making) exchange designed for stablecoins' productLink='http://google.com/' />
+      <Card title='BlackholeSwap' whitepaperLink='http://google.com/' desc='HA decentralized AMM (Automatic Market Making) exchange designed for stablecoins' productLink='http://google.com/' />
+      <Card title='BlackholeSwap' whitepaperLink='http://google.com/' desc='HA decentralized AMM (Automatic Market Making) exchange designed for stablecoins' productLink='http://google.com/' />
+      <Card title='BlackholeSwap' whitepaperLink='http://google.com/' desc='HA decentralized AMM (Automatic Market Making) exchange designed for stablecoins' productLink='http://google.com/' />
     </CardDeck>
   )
 }

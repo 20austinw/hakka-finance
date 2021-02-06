@@ -380,6 +380,18 @@
   color: #363636;
 }
 
+div.card {
+  width: 300px;
+  height: 390px;
+  margin: 15px 15px;
+  padding: 28px 24px 24px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px -8px rgba(11, 104, 73, 0.1);
+  border: solid 1px #c3e6da;
+  background-color: #ffffff;
+  transition: '2s'
+}
+
 .card:hover {
-  height: 440;
+  margin: 5px 15px 15px 15px;
 }
